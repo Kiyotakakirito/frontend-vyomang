@@ -22,10 +22,15 @@ export default defineConfig({
       plugins: [],
     },
   },
-  root: path.resolve("client"),
+  root: '.',
   build: {
-    outDir: path.resolve("dist", "public"),
+    outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+    },
   },
   server: {
     host: "0.0.0.0",
